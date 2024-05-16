@@ -1,0 +1,285 @@
+/****** BODY ******/
+body {
+    background: linear-gradient(90deg, rgba(31, 17, 206, 1) 0%, rgba(229, 43, 43, 1) 100%);
+    height: 100%;
+    width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255, 255, 255 , 0.6);
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255 , 0.6);
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255 , 0.8);
+}
+
+/****** HEADER ******/
+header {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+header .img {
+    height: 5vh;
+}
+
+.input-group {
+    width: 20rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.input-group .form-control {
+    height: 32px;
+    min-width: 15.5rem;
+    border-radius: 0;
+    color: white;
+}
+
+.form-control {
+    background: transparent;
+    color: white;
+    border: none;
+}
+
+.form-control::placeholder {
+    color: rgb(255 255 255 / 60%);
+}
+
+.form-control:focus {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+}
+
+.wrapper-btns {
+    justify-content: end;
+}
+
+#fileSong {
+    gap: 1rem;
+}
+
+.btn {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.375rem;
+    color: white;
+}
+
+.btn:active {
+    border-color: none;
+}
+
+.btn:hover,
+.card .btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: all .4s ease;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Altera para uma direÃ§Ã£o de coluna em dispositivos menores */
+    }
+
+    .input-group {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .input-group .form-control {
+        text-align: center;
+    }
+
+    .wrapper-btns {
+        width: 100%; /* Ocupa toda a largura disponÃ­vel */
+        margin-top: 10px; /* Adiciona um espaÃ§o entre os elementos */
+        justify-content: center;
+    }
+    
+    .logo {
+        width: 32px; /* Reduz o tamanho do logo em dispositivos menores */
+    }
+    
+    #fileSong,
+    #fileSong span {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0rem;
+    }
+}
+
+/****** SECTION ******/
+.glassmorphism {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.card {
+    background: transparent;
+    color: white;
+    width: 15rem;
+    height: 27.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+img.card-img-top {
+    min-height: 15rem;
+    max-height: 15rem;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card-body {
+    min-width: 100%;
+}
+
+.card .btn {
+    width: 100%;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.375rem;
+    transition: all .4s ease;
+}
+
+.btns-card .btn.btn-outline-danger {
+    border: none;
+    max-width: 15%;
+    border-bottom: none;
+}
+
+.card .removeButtonCard:hover {
+    color: red;
+}
+
+/****** MODAL SONGS ******/
+
+.modal {
+    color: white;
+    display: none;
+}
+
+.modal-backdrop {
+    --bs-backdrop-opacity: 0.7;
+}
+
+.btn-close {
+    filter: invert(1);
+    opacity: 1;
+}
+
+.btn-close:focus {
+    box-shadow: none;
+}
+
+#musicModal .form-label {
+    margin: 0;
+}
+
+#musicModal .form-control {
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.modal input.form-control::placeholder {
+    color: rgba(255, 255, 255 , 0.6)
+}
+
+input[type="file"] {
+    background-color: transparent;
+    color: white;
+}
+
+.audioLabel {
+    color: rgba(255,255,255,0.6);
+    padding-left: 0.7rem;
+    min-width: 7.5rem;
+}
+
+span#audioFileName {
+    font-size: 14px;
+}
+
+#chooseAudioFileBtn {
+    min-width: 6rem;
+}
+
+/****** MODAL PLAYLIST ******/
+#modal ul {
+    padding-left: 0;
+    margin: 0;
+    max-height: 15.5rem;
+    overflow-y: auto;
+}
+
+#modal ul li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-right: 0.5rem;
+}
+
+#modal ul li:last-child {
+    border-bottom: none;
+}
+
+p.card-text {
+    margin: 0;
+}
+
+.btn.btn-outline-danger {
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+/****** FOOTER ******/
+footer {
+    background-color: transparent;
+}
+
+.copy {
+    text-align: center;
+}
+
+.copy a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.copy a i {
+    content: url('./assets/svg/heart.svg');
+    display: inline-block;
+    width: 16px;
+    filter: invert(1);
+    transform: translate(0px, 3px);
+    margin: 0 2px;
+}
